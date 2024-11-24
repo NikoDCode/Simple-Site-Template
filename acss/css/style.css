@@ -18,7 +18,7 @@
   --gap-md: calc(var(--gap) * 1.5);
   --gap-lg: calc(var(--gap) * 2);
 }
-
+/*  typography*/
 * {
   margin: 0;
   padding: 0;
@@ -40,19 +40,32 @@ body {
 a {
   text-decoration: none;
 }
-
+/* common */
 .container {
-  width: min(100% - 40px, var(--container-primary));
+  width: min(100% - var(--gap-lg), var(--container-primary));
   margin-inline: auto;
 }
 
 .container--sm {
-  width: min(100% - 40px, var(--container-secondary));
+  width: min(100% - var(--gap-lg), var(--container-secondary));
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* header */
 .header {
   background-color: var(--color-gray-light);
-  padding-top: 65px;
+  padding-top: 69px;
   padding-bottom: 141px;
 }
 
@@ -67,7 +80,7 @@ a {
 .navbar__link {
   display: block;
   color: var(--color-black);
-  padding: 0.5em 1px 0.5em 0;
+  padding: 0.5em 3px 0.5em 0;
   letter-spacing: var(--letter-spacing);
 }
 .navbar__link--active {
@@ -100,4 +113,85 @@ a {
   background-color: var(--color-primary);
   letter-spacing: var(--letter-spacing);
   padding: 0.5em 1em;
+}
+
+/* section */
+.section {
+  padding-top: 105px;
+  padding-bottom: 92px;
+}
+.section__title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+.section__description {
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+/* process */
+.process {
+  background-color: var(--color-gray-light);
+  margin-bottom: -41px;
+}
+
+/* experience */
+.experience {
+  padding-top: 100px;
+  padding-bottom: 92px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.experience__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--gap-lg);
+}
+.experience-item {
+  display: flex;
+  gap: var(--gap);
+}
+.experience-item__number {
+  font-size: 1.3125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.experience-item__image {
+  order: -1;
+}
+
+/* video */
+.video {
+  background-color: var(--color-gray-light);
+  padding-bottom: 100px;
+}
+
+.visually-hidden {
+}
+
+.video__iframe {
+  border: 0;
+  height: 600px;
+  width: 100%;
+  display: block;
+}
+
+/* footer */
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.footer__name {
+  font-size: 1.3125rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.footer__copyright {
+  font-size: 0.8125rem;
 }
